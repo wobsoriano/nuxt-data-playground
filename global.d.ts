@@ -3,7 +3,7 @@ declare module '*?client'
 declare module '*?server'
 
 // named export
-declare module '@/db/todos?server' {
-  import * as all from '~/db/todos'
+declare module '@/lib/prisma?server' {
+  import * as all from '@/lib/prisma'
   export = all
 }

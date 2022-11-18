@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { useServerData } from '@/lib/loader'
-import { onGetTodos } from '@/db/todos?server'
+import { prisma } from '@/lib/prisma?server'
 
-const todos = await useServerData(() => onGetTodos())
+const todos = await useServerData(async () => {
+  const todos = await prisma.todo.findMany()
+  return todos
+})
 </script>
 
 
