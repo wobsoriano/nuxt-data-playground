@@ -3,8 +3,8 @@ import { useServerData } from '@/lib/loader'
 import { prisma } from '@/lib/prisma?server'
 
 const todos = await useServerData(async () => {
-  const todos = await prisma.todo.findMany()
-  return todos
+  const result = await prisma.todo.findMany()
+  return result
 })
 </script>
 
